@@ -1,0 +1,425 @@
+/* display:flex + flex-wrap:wrap - используем потомучто нужно будет смещать их в адаптации, а это упращает */
+
+body {
+    margin: 0;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #111;
+    background-color: #E9F3FC;
+
+    -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    background-color: #111;
+}
+
+.container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto; /* сверху и снизу 0, а слева и справо auto(по центру) */
+}
+
+/*--- header ---*/
+.header {
+    padding: 35px 0;
+    height: 100px;
+
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.header__align {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 20px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.header--fixed {
+    height: 50px;
+    padding: 15px 0;
+    position: fixed;
+    
+    background-color: #111;
+    color: #E9F3FC;
+}
+
+/*--- nav ---*/
+.nav {
+    display: flex;
+
+    font-weight: 700;
+}
+
+.nav__link:first-child {
+    margin-left: 0;
+}
+.nav__link {
+    margin-left: 50px;
+
+    color: #111;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color .2s linear;
+}
+
+.nav__link:hover {
+    color: #E9F3FC;
+}
+
+.nav--fixed .nav__link {
+    color: #E9F3FC;
+}
+
+/*--- intro ---*/
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100vh;
+    padding-top: 100px;
+    
+    background: linear-gradient(to bottom right, #ff6363, #ada0ff);
+}
+
+.intro__align {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.intro__title {
+    margin-bottom: 30px;
+
+    font-size: 65px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+
+.intro__suptitle {
+    margin-bottom: 60px;
+
+    font-size: 22px;
+}
+
+/*-- button --*/
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    
+    padding: 14px 40px;
+
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    
+}
+
+.btn--black {
+    background-color: #111;
+    color: #E9F3FC;
+    transition: background-color .1s linear;
+}
+
+.btn--black:hover {
+    background-color: #E9F3FC;
+    color: #111;   
+}
+
+.btn--download {
+    min-width: 250px;
+    border: 1px solid #111;
+}
+
+.btn--download:hover {
+    border: 1px solid #111;
+}
+
+/*-- features --*/
+.features {
+    display: flex;
+    margin: 120px 0;
+
+    flex-wrap: wrap;
+}
+
+.features__item {
+    width: 33.333%;
+    padding: 0 30px;
+    margin: 30px 0;
+
+    text-align: center;
+}
+
+.features__icon {
+    width: 25%;
+}
+
+.features__title {
+    margin: 25px 0;
+    font-weight: 700;
+}
+
+.features__text {
+    font-size: 13px;
+}
+
+/*-- cards --*/
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards__item {
+    width: 25%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cards__item:hover .cards__content {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.cards__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    transform: translate3d(-50%, -50%, 0);
+
+}
+
+.cards__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    background: linear-gradient(to bottom right, #ff6363bb, #ada0ffbb);
+    text-align: center;
+    opacity: 0;
+    transition: opacity .2s linear;
+}
+
+.cards__title {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #E9F3FC;
+}
+
+.cards__text {
+    color: #E9F3FC;
+}
+
+/*-- textfield --*/
+.textfield {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 50vh;
+}
+
+.textfield__text {
+    font-size: 50px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+
+/*-- slider --*/
+.slider {
+    overflow: hidden;
+    background-color: #111;
+}
+
+.slider__item {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50vh;
+}
+
+.slider__image {
+    width: 50%;
+    /* height: 500px; */
+    position: relative;
+}
+
+.slider__image img {
+    width: 100%;
+    position: absolute;
+}
+
+.slider__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 50%;
+    padding: 0 80px;
+}
+
+.slider__text {
+    margin-bottom: 5px;
+
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #E9F3FC;
+}
+
+.slider__signature {
+    color: #e9f3fcbb;
+    letter-spacing: 2px;
+}
+
+/* download */
+.download {
+    margin: 90px 0;
+    
+    text-align: center;
+}
+
+.download__title {
+    margin-bottom: 10px;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.download__text {
+    margin-bottom: 30px;
+
+    font-weight: 700;
+}
+
+/*-- footer --*/ 
+.footer {
+    background-color: #111;
+    color: #E9F3FC;
+}
+
+.footer__align {
+    display: flex;
+    flex-wrap: wrap;
+    
+    padding: 70px 0;
+}
+
+.footer__block {
+    width: 33.333%;
+    padding: 0 15px;
+
+    text-align: center;
+}
+
+.footer__title {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* copyright */
+.copyright {
+    padding: 20px 0;
+
+    background-color: rgb(22, 22, 22);
+}
+
+.copyright__text {
+    text-align: center;
+    font-size: 11px;
+    color: #808080;
+}
+
+.copyright__text span {
+    color: #fff;
+}
+
+
+/* -------------------------------------------------------- */
+.swiper-container {
+    overflow: hidden;
+    background-color: #111;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-wrap: wrap;
+    height: 50vh;
+  }
+
+.swiper-image {
+    width: 50%;
+    position: relative;
+}
+
+.swiper-image img {
+    width: 100%;
+}
+
+.swiper-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 50%;
+    padding: 0 80px;
+}
+
+.swiper-text {
+    margin-bottom: 5px;
+
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #E9F3FC;
+}
+
+.swiper-signature {
+    color: #e9f3fcbb;
+    letter-spacing: 2px;
+}
+
+
