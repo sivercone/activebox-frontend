@@ -1,0 +1,143 @@
+@media (max-width: 991px) {
+    /* nav */
+    .nav.show {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        flex-direction: column;
+        width: 100%;
+
+        background-color: #111;
+        
+    }
+
+    .nav__link {
+        padding: 10px 15px;
+        margin-left: 0;
+        text-align: left;
+        color: #e9f3fc;
+    }
+
+    .nav__link:hover {
+        background-color: #ada0ff;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    /* header */
+    .header {
+        padding: 15px 20px;
+        height: 50px;
+    }
+ 
+    .header--fixed {
+        padding: 15x 20px;
+    }
+    /* features */
+    .features {
+        margin: 35px 0;
+    }
+    .features__item {
+        width: 50%;
+    }
+    .features__title {
+        font-size: 25px;
+    }
+    .features__text {
+        font-size: 20px;
+    }
+    /* cards */
+    .cards__item { 
+        width: 50%;
+    }
+}
+
+@media (max-width: 575px) {
+ 
+    /* header */
+    .header {
+        padding: 15px 10px;
+        height: 50px;
+    }
+ 
+    .header--fixed {
+        padding: 15x 10px;
+    }
+
+    .header__logo {
+        font-size: 15px;
+    }
+
+    /* intro */
+    .intro__title {
+        font-size: 35px;
+    }
+
+    .intro__suptitle {
+        font-size: 15px;
+    }
+
+    /* features */
+    .features {
+        margin: 0;
+    }
+
+    .features__item {
+        width: 50%;
+        padding: 0 15px;
+    }
+
+    .features__title {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+    .features__text {
+        font-size: 13px;
+    }
+
+    /* cards */
+    .cards__item {
+        width: 50%;
+        height: 300px;
+    }
+
+    /* slider */
+    .textfield__text {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    /* footer */
+    .footer__align {
+        padding: 35px 0;
+    }
+ }
+
+ @media (max-width: 380px) {
+     /* features */
+     .features__item {
+         width: 100%;
+         margin: 15px 0;
+     }
+     .features__text {
+         font-size: 15px;
+     }
+     /* cards */
+     .cards__item {
+         width: 100%;
+     }
+     /* slider */
+     .textfield__text {
+         font-size: 22px;
+         padding: 0 10px;
+     }
+ }
